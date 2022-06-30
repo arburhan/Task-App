@@ -31,7 +31,7 @@ const Login = () => {
         navigate('/signup');
     }
     return (
-        <div>
+        <div className='text-center'>
             <h2 className='text-xl md:text-3xl py-2'>Welcome to Todo App</h2>
             <div className='w-full max-w-lg mx-auto shadow-2xl bg-base-100 p-10 my-10 rounded-xl'>
                 <h2 className='text-3xl'>Login</h2>
@@ -47,9 +47,9 @@ const Login = () => {
                             <span className="label-text">Password</span>
                         </label>
                         <input name='password' type="password" placeholder="password" className="input input-bordered" />
-                        <label className="label">
+                        {/*   <label className="label">
                             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                        </label>
+                        </label> */}
                     </div>
                     {errorMessage}
                     {

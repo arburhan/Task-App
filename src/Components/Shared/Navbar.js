@@ -2,16 +2,20 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { signOut } from 'firebase/auth';
 
 
 const Navbar = () => {
     const [user] = useAuthState(auth);
+    const handleSignOut = () => {
+        signOut(auth);
+    }
     const navTabs = <>
         <li> <Link to='/'>To Do</Link> </li>
         <li className='md:mx-2'> <Link to='/'>Completed Task</Link> </li>
         <li> <Link to='/'>Calendar</Link> </li>
         {
-            user ? <li> <Link to='/login'>Login</Link> </li> : <button>Sign Out</button>
+            !user ? <li> <Link to='/login'>Login</Link> </li> : <li className='md:mx-2'><button onClick={handleSignOut} >Sign Out</button></li>
         }
     </>
     return (

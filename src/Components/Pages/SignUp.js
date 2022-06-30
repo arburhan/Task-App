@@ -32,7 +32,7 @@ const SignUp = () => {
     }
 
     return (
-        <div>
+        <div className='text-center'>
             <div className='w-full max-w-lg mx-auto shadow-2xl bg-base-100 p-12 my-10 rounded-xl'>
                 <h2 className='text-3xl'>Sign Up</h2>
                 <form onSubmit={handleSignUp}>
