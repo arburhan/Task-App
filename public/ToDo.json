@@ -1,32 +1,37 @@
 [
     {
+        "_id": 1,
         "name": "Going School",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit velit dicta expedita ullam placeat impedit iusto sapiente modi doloribus voluptatibus.",
-        "tapClass": "line-through"
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit velit dicta expedita ullam placeat impedit iusto sapiente modi doloribus voluptatibus."
     },
     {
+        "_id": 2,
         "name": "Hangout with tom",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit velit dicta expedita ullam placeat impedit iusto sapiente modi doloribus voluptatibus.",
-        "tapClass": "line-through"
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit velit dicta expedita ullam placeat impedit iusto sapiente modi doloribus voluptatibus."
     },
     {
+        "_id": 3,
         "name": "Sirajul sirer task",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit velit dicta expedita ullam placeat impedit iusto sapiente modi doloribus voluptatibus.",
-        "tapClass": "line-through"
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit velit dicta expedita ullam placeat impedit iusto sapiente modi doloribus voluptatibus."
     },
     {
+        "_id": 4,
         "name": "Jerry Birthday",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit velit dicta expedita ullam placeat impedit iusto sapiente modi doloribus voluptatibus."
     },
     {
+        "_id": 5,
         "name": "Cook noodlus",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit velit dicta expedita ullam placeat impedit iusto sapiente modi doloribus voluptatibus."
     },
     {
+        "_id": 6,
         "name": "Cycling with friends",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit velit dicta expedita ullam placeat impedit iusto sapiente modi doloribus voluptatibus."
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit velit dicta expedita ullam placeat impedit iusto sapiente modi doloribus voluptatibus.",
+        "complete": true
     },
     {
+        "_id": 7,
         "name": "Going New market",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit velit dicta expedita ullam placeat impedit iusto sapiente modi doloribus voluptatibus."
     }

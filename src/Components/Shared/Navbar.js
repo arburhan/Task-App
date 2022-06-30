@@ -11,11 +11,12 @@ const Navbar = () => {
         signOut(auth);
     }
     const navTabs = <>
-        <li> <Link to='/toDo'>To Do</Link> </li>
-        <li className='md:mx-2'> <Link to='/completeTask'>Completed Task</Link> </li>
-        <li> <Link to='/calendar'>Calendar</Link> </li>
+        <li> <Link to='/home'>Home</Link> </li>
+        <li className='md:mx-2'> <Link to='/toDo'>To Do</Link> </li>
+        <li> <Link to='/completeTask'>Completed Task</Link> </li>
+        <li className='md:mx-2'> <Link to='/calendar'>Calendar</Link> </li>
         {
-            !user ? <li> <Link to='/login'>Login</Link> </li> : <li className='md:mx-2'><button onClick={handleSignOut} >Sign Out</button></li>
+            !user ? <li> <Link to='/login'>Login</Link> </li> : <li><button onClick={handleSignOut} >Sign Out</button></li>
         }
     </>
     return (
