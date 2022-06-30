@@ -13,12 +13,17 @@ const Home = () => {
         </div>
     }
     return (
-        <div>
-            <div>
+        <div className='py-6'>
+            <div className='text-center my-12'>
                 <button className='btn btn-accent' >Add New Task</button>
             </div>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-3' >
-                {taskLists?.slice(0, 6).map(taskList => <SingleTask key={taskList._id} taskList={taskList} refetch={refetch}> </SingleTask>)}
+            <div>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-3' >
+                    {taskLists?.slice(0, 6).map(taskList => <SingleTask key={taskList._id} taskList={taskList} refetch={refetch}> </SingleTask>)}
+                </div>
+                <div className='text-center my-4 '>
+                    <button className='btn btn-info btn-xs sm:btn-sm md:btn-md lg:btn-lg' >Show More</button>
+                </div>
             </div>
         </div>
     );
