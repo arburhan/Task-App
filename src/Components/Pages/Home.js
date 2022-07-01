@@ -1,14 +1,20 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { useQuery } from 'react-query';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import auth from '../../firebase.init';
 import SingleTask from './SingleTask';
 
 const Home = () => {
     const navigate = useNavigate();
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const [user] = useAuthState(auth);
+
+
     const { data: taskLists, isLoading, refetch } = useQuery(['shortTask'], () =>
-        fetch(`ToDo.json`)
+        fetch(`http://localhost:5000/list/${user.email}`)
             .then(res => res.json())
     )
     if (isLoading) {
@@ -21,18 +27,37 @@ const Home = () => {
         navigate('/toDo')
     }
     const onSubmit = data => {
-        console.log(data)
-        reset();
+        const newTask = {
+            email: user.email,
+            name: data.taskName,
+            description: data.description
+        }
+        fetch(`http://localhost:5000/list`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newTask)
+        })
+            .then(res => res.json())
+            .then(data => {
+                // close modal
+                reset();
+                if (data.success) {
+                    refetch();
+                    toast.success(`task added successfully`);
+                }
+            })
     }
     return (
         <div className='py-6'>
             <div className='text-center my-12'>
-                <label for="addTaskModal" class="btn modal-button btn-accent">Add New Task</label>
+                <label htmlFor="addTaskModal" class="btn modal-button btn-accent">Add New Task</label>
                 {/* modal */}
                 <input type="checkbox" id="addTaskModal" class="modal-toggle" />
                 <div class="modal modal-bottom sm:modal-middle">
                     <div class="modal-box">
-                        <label for="addTaskModal" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                        <label htmlFor="addTaskModal" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                         <form onSubmit={handleSubmit(onSubmit)}>
                             <h3 className="font-bold text-lg">Add New Task</h3>
                             <div className='form-control w-full max-w-xs mx-auto'>
@@ -64,7 +89,7 @@ const Home = () => {
                                 </label>
                             </div>
                             <div className="modal-action justify-center">
-                                <input for="addTaskModal" type="submit" value="Add Task" className="btn w-full max-w-xs" />
+                                <input htmlFor="addTaskModal" type='submit' value="Add Task" className="btn w-full max-w-xs" />
                             </div>
                         </form>
                     </div>

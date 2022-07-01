@@ -7,6 +7,11 @@ import CompleteTask from './Components/Pages/Completed Task/CompleteTask';
 import Calendar from './Components/Pages/Calender/Calendar';
 import Home from './Components/Pages/Home';
 import Todo from './Components/Pages/ToDo/Todo';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
+
 
 function App() {
   return (
@@ -21,7 +26,7 @@ function App() {
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
       </Routes>
-
+      <ToastContainer></ToastContainer>
     </>
   );
 }
