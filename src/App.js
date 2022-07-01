@@ -3,7 +3,7 @@ import Navbar from './Components/Shared/Navbar';
 import { Routes, Route, Link } from "react-router-dom";
 import Login from './Components/Pages/Login';
 import SignUp from './Components/Pages/SignUp';
-import CompleteTask from './Components/Pages/CompleteTask';
+import CompleteTask from './Components/Pages/Completed Task/CompleteTask';
 import Calendar from './Components/Pages/Calender/Calendar';
 import Home from './Components/Pages/Home';
 import Todo from './Components/Pages/ToDo/Todo';
